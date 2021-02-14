@@ -236,10 +236,8 @@ main {
 
 label {
   font-family: var(--font-default);
-  font-size: 17px;
   font-weight: normal;
   display: inline-block;
-  margin-bottom: 11px;
 }
 input {
   padding: 8px;
@@ -256,22 +254,30 @@ input {
 }
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
+  /* was font-size 0.4em - looked too small */
+  font-size: 0.5em;
   color: #e54858;
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
+  text-align: left;
   line-height: 0.3;
-  opacity: 0;
+  opacity: 1;
+  /* added display none to turn on and off */
   transition: 0.3s;
 }
 .formData[data-error-visible="true"]::after {
   opacity: 1;
 }
-.formData[data-error-visible="true"] .text-control {
+.formData[data-error-visible="true"] .text-control,
+.formData[data-error-visible="true"] .checkbox-label .checkbox-icon,
+.formData[data-error-visible="true"]
+  #checkbox1
+  + .checkbox2-label
+  .checkbox-icon {
   border: 2px solid #e54858;
 }
+
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -285,12 +291,13 @@ input[data-error]::after {
   font-size: 12px;
   font-weight: normal;
 }
+
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
   display: block;
   width: 20px;
   height: 20px;
-  border: 2px solid #279e7a;
+  border: 1px solid white;
   border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
@@ -318,6 +325,11 @@ input[data-error]::after {
 .checkbox-input {
   display: none;
 }
+
+.checkbox-input:checked + .checkbox-label .checkbox-icon {
+  border: 1px solid #279e7a;
+}
+
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
@@ -561,6 +573,17 @@ footer {
     margin: 32px auto 10px;
     padding: 12px 35px;
   }
+
+  label {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .text-label {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
   .copyrights {
     margin-top: 50px;
     text-align: center;

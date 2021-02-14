@@ -5,7 +5,10 @@
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="modal.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
@@ -14,44 +17,39 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
+        <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      </div>
+      <div class="main-navbar">
+        <!-- <a href="#" class="active"><span>Home</span></a> -->
+        <a href="#" class="active"><span>Event Details</span></a>
+        <a href="#"><span>About Us</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Past Events</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
     </div>
-    <div class="main-navbar">
-      
-      <!-- <a href="#" class="active"><span>Home</span></a> -->
-      <a href="#" class="active"><span>Event Details</span></a>
-      <a href="#"><span>About Us</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Past Events</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    </div>
-  </div>
     <main>
       <div class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">
-            US Nationwide <br>
+            US Nationwide <br />
             Game-a-Thon
           </h1>
           <p class="hero-text">
             Do you live to game? Our next gaming event is now accepting
             reservations for players, but spots are limited.
           </p>
-          <button class="btn-signup modal-btn">
-            sign up now
-          </button>
+          <button class="btn-signup modal-btn">sign up now</button>
         </div>
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">
-          sign up now
-        </button>
+        <button class="btn-signup modal-btn">sign up now</button>
       </div>
 
+      <!-- Modal Form -->
       <div class="bground">
         <div class="content">
           <span class="close"></span>
@@ -62,55 +60,59 @@
               method="get"
               onsubmit="return validate();"
             >
-              <div
-                class="formData">
-                <label>First Name</label><br>
+              <div class="formData">
+                <label for="first">First Name</label><br />
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                /><br />
               </div>
-              <div
-                class="formData">
-                <label>Last Name</label><br>
+              <div class="formData">
+                <label for="last">Last Name</label><br />
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                  minlength="2"
+                /><br />
               </div>
-              <div
-                class="formData">
-                <label>Email</label><br>
+              <div class="formData">
+                <label for="email">Email</label><br />
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                /><br />
               </div>
-              <div
-                class="formData">
-                <label>Birthdate</label><br>
+              <div class="formData">
+                <label for="birthdate">Birthdate</label><br />
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                /><br />
               </div>
-              <div
-                class="formData">
-                <label>How many tournaments have you attended? </label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <div class="formData">
+                <label for="quantity"
+                  >How many tournaments have you attended? </label
+                ><br />
+                <input
+                  type="number"
+                  class="text-control"
+                  id="quantity"
+                  name="quantity"
+                  min="0"
+                  max="99"
+                />
               </div>
               <p class="text-label">Which location?</p>
-              <div
-                class="formData">
+              <div class="formData">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -179,25 +181,25 @@
                 >
               </div>
 
-              <div
-                class="formData">
+              <div class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
                   checked
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   I have read and I agree to GameOn's terms and conditions.
                 </label>
-                <br>
+              </div>
+              <div class="formData">
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Please sign me up to be notified about future events.
                 </label>
-                <br>
+                <br />
               </div>
               <input
                 class="btn-submit"
@@ -211,9 +213,7 @@
       </div>
     </main>
     <footer>
-      <p class="copyrights">
-        Copyright 2014 - 2020, GameOn Inc.
-      </p>
+      <p class="copyrights">Copyright 2014 - 2020, GameOn Inc.</p>
     </footer>
     <script src="modal.js"></script>
   </body>
