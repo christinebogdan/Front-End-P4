@@ -54,11 +54,19 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form
+            <!-- <form
               name="reserve"
               action="index.html"
               method="get"
               onsubmit="return validate();"
+              novalidate
+            > -->
+            <form
+              id="form"
+              name="reserve"
+              action="index.html"
+              method="get"
+              novalidate
             >
               <div class="formData">
                 <label for="first">First Name</label><br />
@@ -68,6 +76,7 @@
                   id="first"
                   name="first"
                   minlength="2"
+                  required
                 /><br />
               </div>
               <div class="formData">
@@ -78,6 +87,7 @@
                   id="last"
                   name="last"
                   minlength="2"
+                  required
                 /><br />
               </div>
               <div class="formData">
@@ -87,6 +97,7 @@
                   type="email"
                   id="email"
                   name="email"
+                  required
                 /><br />
               </div>
               <div class="formData">
@@ -96,6 +107,7 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
                 /><br />
               </div>
               <div class="formData">
@@ -109,6 +121,7 @@
                   name="quantity"
                   min="0"
                   max="99"
+                  required
                 />
               </div>
               <p class="text-label">Which location?</p>
@@ -201,13 +214,18 @@
                 </label>
                 <br />
               </div>
+
               <input
+                id="btn-submit"
                 class="btn-submit"
                 type="submit"
                 class="button"
                 value="Go"
               />
             </form>
+            <div id="confirmation">
+              <p>Thank you for submitting your registration details.</p>
+            </div>
           </div>
         </div>
       </div>

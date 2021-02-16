@@ -64,6 +64,18 @@ img {
   border-radius: 15px;
 }
 
+.topnav a.icon:hover {
+  background-color: transparent;
+  color: black;
+  border-radius: 0px;
+}
+
+.topnav a.icon:active {
+  background-color: transparent;
+  color: black;
+  border-radius: 0px;
+}
+
 .topnav a.active span {
   border-bottom: 1px solid white;
 }
@@ -216,9 +228,10 @@ main {
 }
 
 .content {
-  margin: 5% auto;
-  width: 100%;
-  max-width: 500px;
+  margin: 18% auto 5%;
+  /* width: 100%; */
+  /* max-width was 500 */
+  max-width: 536px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
@@ -238,28 +251,35 @@ label {
   font-family: var(--font-default);
   font-weight: normal;
   display: inline-block;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
+
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
   outline: none;
 }
 .text-control {
-  margin: 0;
+  /* margin was 0 */
+  margin: 0 0 8px 0;
   padding: 8px;
   width: 100%;
   border-radius: 8px;
   font-size: 20px;
-  height: 48px;
+  height: 65px;
 }
+
 .formData[data-error]::after {
   content: attr(data-error);
   /* was font-size 0.4em - looked too small */
   font-size: 0.5em;
   color: #e54858;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  /* was 7px margin top */
+  margin-top: 0px;
+  /* was 0 margin bottom */
+  margin-bottom: 0px;
   text-align: left;
   line-height: 0.3;
   opacity: 1;
@@ -354,6 +374,23 @@ input[data-error]::after {
   left: 21%;
   top: 19%;
 }
+#confirmation {
+  display: none;
+  align-items: center;
+  opacity: 1;
+  background-color: #232323;
+  padding: 0 70px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 10;
+  height: 85%;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 52px;
+}
+
 .close {
   position: absolute;
   right: 15px;
@@ -378,6 +415,9 @@ input[data-error]::after {
 }
 .close:after {
   transform: rotate(-45deg);
+}
+.btn-submit#btn-submit {
+  margin: 5px auto 0;
 }
 .btn-submit,
 .btn-signup {
@@ -460,7 +500,9 @@ input[data-error]::after {
 /* custom select end */
 .text-label {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
+  padding: 0;
+  margin-top: 12px;
 }
 .hero-section {
   min-height: 93vh;
@@ -582,6 +624,16 @@ footer {
   .text-label {
     font-size: 14px;
     margin-top: 10px;
+  }
+
+  .text-control {
+    height: 48px;
+  }
+
+  #confirmation {
+    height: 82.7%;
+    /* should be 36px but looks too big */
+    font-size: 30px;
   }
 
   .copyrights {
