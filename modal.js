@@ -28,12 +28,15 @@ const termsAndCons = document.getElementById("checkbox1");
 const regExEmail = new RegExp(
   "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/"
 );
+const regExDate = new RegExp(
+  "(19[0-9][0-9]|20[0-4][0-9]|2050)[-](0?[1-9]|1[0-2])[-]([0][1-9]|[12][0-9]|3[01])$"
+);
 
 // data-error messages paired with elements input element IDs
 const errorMessages = {
   first: "Please enter 2+ characters for name field.",
   last: "Please enter 2+ characters for name field.",
-  email: "Please enter your email address.",
+  email: "Please enter a valid email address.",
   birthdate: "Please enter your date of birth.",
   quantity: "Please enter a number between 0 and 99.",
   location1: "Please choose one option.",
@@ -51,11 +54,12 @@ function launchModal() {
 // close modal event
 modalClose.addEventListener("click", closeModal);
 
-// close modal form
+// close modal form + reset form input + remove error styling
 function closeModal() {
-  // OPTIONAL: removeInvalidStyling();
-  // OPTIONAL: remove confirmation message;
   modalbg.style.display = "none";
+  form.reset();
+  removeInvalidStyling();
+  removeConfirmation();
 }
 
 // check validity of user input fields
@@ -71,11 +75,14 @@ function getInvalidElements() {
   }
   // validate email address
   // validation did not work with const regExEmail
-  if (!email.validity.valid) {
+  if (!regExEmail.test(email.value)) {
     falseValues.push(email);
   }
   // does not return false for ##.##.#####
-  if (!birthDate.validity.valid) {
+  // if (!birthDate.validity.valid) {
+  //   falseValues.push(birthDate);
+  // }
+  if (!regExDate.test(birthDate.value)) {
     falseValues.push(birthDate);
   }
   // validate tournament attendance
@@ -141,6 +148,16 @@ function setConfirmation() {
     e.preventDefault();
     closeModal();
   });
+}
+
+function removeConfirmation() {
+  confirmationMessage.style.display = "none";
+  submitBtn.value = "Go";
+  form.removeEventListener("click", (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+  form.addEventListener("submit", onSubmit);
 }
 
 // handle submit event
