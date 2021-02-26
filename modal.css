@@ -36,6 +36,8 @@ img {
 }
 .header-logo {
   float: left;
+  width: auto;
+  height: auto;
 }
 .main-navbar {
   float: right;
@@ -640,6 +642,13 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero-headline {
+    font-size: 30px;
+    white-space: normal;
   }
 }
 
