@@ -1,3 +1,5 @@
+Link to project site: https://christinebogdan.github.io/build-landingpage-using-js/
+
 Project 4 - Front-end Dashboard
 
 This repo contains all the starting code you need to add the functionality requirements/deliverables for Project 4.
