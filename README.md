@@ -1,7 +1,5 @@
 Link to project site: https://christinebogdan.github.io/build-landingpage-using-js/
 
-Project 4 - Front-end Dashboard
-
 COMPATIBILITY
 
 - The whole site is responsive on mobile and desktop
