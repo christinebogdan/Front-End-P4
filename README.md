@@ -47,6 +47,10 @@ The website content can be divided into **three parts**.
 
 - setup of constraint validation
 
+## Acquired skills
+
+- Program using fundamentals of JavaScript
+
 ## Demo
 
 [Link to website](https://christinebogdan.github.io/p3_GameOn/)
