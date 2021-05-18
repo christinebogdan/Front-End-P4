@@ -43,7 +43,9 @@ The website content can be divided into **three parts**.
 - must be fully responsive
 - must be fully compatible with latest versions of Chrome and Firefox (Feb 2021)
 
-## Challenges
+## Challenges & Achievements
+
+- setup of constraint validation
 
 ## Demo
 
