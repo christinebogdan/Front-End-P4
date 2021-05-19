@@ -1,5 +1,9 @@
 # GameOn | Game-a-thon signup
 
+## Developed Skills
+
+- Program using fundamentals of JavaScript
+
 ## Description
 
 GameOn is a website, where people interested in gaming are able to sign up and reserve tickets for a game-a-thon.
@@ -46,10 +50,6 @@ The website content can be divided into **three parts**.
 ## Challenges & Achievements
 
 - setup of constraint validation
-
-## Acquired skills
-
-- Program using fundamentals of JavaScript
 
 ## Demo
 
